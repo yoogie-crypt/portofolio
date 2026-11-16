@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin — Portofolio Agung</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body>
+  <!-- LOGIN -->
+  <section class="login" id="loginView" hidden>
+    <div class="login-orb o1"></div><div class="login-orb o2"></div>
+    <form class="login-card" id="loginForm" novalidate>
+      <img src="/assets/logo.svg" alt="" width="56" height="56" />
+      <h1>Panel Admin</h1>
+      <p>Masuk untuk mengelola isi portofolio.</p>
+      <label class="fld"><span>Email</span><input type="email" name="email" required autocomplete="username" placeholder="email@contoh.com" /></label>
+      <label class="fld"><span>Password</span>
+        <div class="pw"><input type="password" name="password" required autocomplete="current-password" placeholder="••••••••" /><button type="button" class="pw-toggle" aria-label="Tampilkan password">👁</button></div>
+      </label>
+      <p class="login-error" id="loginError" role="alert"></p>
+      <button class="abtn primary full" type="submit"><span>Masuk</span></button>
+      <a href="/" class="back-link">← Kembali ke website</a>
+    </form>
+  </section>
+
+  <!-- APP -->
+  <div class="app" id="appView" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a href="/" class="sb-brand" target="_blank" rel="noopener"><img src="/assets/logo.svg" alt="" width="34" height="34" /><span>Admin<b>.</b></span></a>
+      <nav class="sb-nav">
+        <button data-view="dashboard" class="active"><i>📊</i>Ringkasan</button>
+        <button data-view="projects"><i>🗂️</i>Proyek</button>
+        <button data-view="skills"><i>🧩</i>Keahlian</button>
+        <button data-view="experiences"><i>🎓</i>Perjalanan</button>
+        <button data-view="messages"><i>✉️</i>Pesan <em class="badge" id="badgeMsg" hidden></em></button>
+        <button data-view="testimonials"><i>💬</i>Testimoni <em class="badge" id="badgeTesti" hidden></em></button>
+      </nav>
+      <div class="sb-foot">
+        <a href="/" target="_blank" rel="noopener" class="sb-link">↗ Lihat website</a>
+        <button class="sb-link" id="logoutBtn">⎋ Keluar</button>
+      </div>
+    </aside>
+    <div class="sb-backdrop" id="sbBackdrop"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+        <div>
+          <h1 id="viewTitle">Ringkasan</h1>
+          <p id="viewSub">Statistik dan aktivitas terbaru</p>
+        </div>
+        <div class="top-actions" id="topActions"></div>
+      </header>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header><h2 id="modalTitle"></h2><button class="x" data-close aria-label="Tutup">✕</button></header>
+      <div class="modal-body" id="modalBody"></div>
+      <footer id="modalFoot"></footer>
+    </div>
+  </div>
+
+  <div class="atoast" id="atoast" role="status" aria-live="polite"></div>
+  <div class="boot" id="boot"><span class="spinner"></span></div>
+
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

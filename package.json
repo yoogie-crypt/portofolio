@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-agung",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portofolio Agung Hidayat — frontend statis + Vercel Functions + Neon Postgres + Vercel Blob",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@vercel/blob": "^2.0.0",
+    "nodemailer": "^7.0.0",
+    "pg": "^8.13.0"
+  }
+}
